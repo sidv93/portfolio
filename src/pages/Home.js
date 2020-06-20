@@ -5,8 +5,9 @@ import Introduction from '../components/Introduction';
 const Container = styled.div`
     display: flex;
     align-items: center;
-    min-height: 100%;
-    padding: 0 80px;
+    min-height: 90vh;
+    height: 90vh;
+    padding: 0 10%;
 `;
 
 const Home = () => {

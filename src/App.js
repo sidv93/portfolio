@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
 import ParticlesBg from 'particles-bg';
-import Home from './pages/Home';
+import Home from './fresh/pages/Home';
 import styled from 'styled-components';
 import About from './pages/About';
 import Skills from './pages/Skills';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from './fresh/components/Footer';
+// import Header from './fresh/components/Header';
 
 const Container = styled.div`
-  height: 100vh;
+    /* padding: 0 10%10vh; */
 `;
 
 function App() {
@@ -28,7 +30,7 @@ function App() {
   };
   return (
     <Container>
-      <Router>
+      {/* <Router>
         <Switch>
           <Route path="/about">
             <About />
@@ -40,8 +42,15 @@ function App() {
             <Home />
           </Route>
         </Switch>
-      </Router>
-      <ParticlesBg type="custom" config={config} bg={true} />
+      </Router> */}
+      {/* <Header />
+      <Home />
+      <About />
+      <Skills />
+      <Footer />
+      <ParticlesBg type="custom" config={config} bg={true} /> */}
+      <Home />
+      <Footer />
     </Container>
   );
 }

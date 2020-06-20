@@ -5,8 +5,9 @@ import Skill from '../components/Skills';
 const Container = styled.div`
     display: flex;
     align-items: center;
-    min-height: 100%;
-    padding: 0 80px;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0 10%;
 `;
 
 const Skills = () => {
