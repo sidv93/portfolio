@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import Logo from '../../assets/logo.svg'
+import Logo from '../../assets/sv_logo.png'
 
 const HeaderContainer = styled.header`
     background-color: transparent;
@@ -48,7 +48,7 @@ const Header = () => {
     const history = useHistory();
     return (
         <HeaderContainer>
-            <img src={Logo} style={{ height: '30px', width: '30px' }} alt="logo" />
+            <img src={Logo} style={{ height: '50px', width: '50px', cursor: 'pointer' }} alt="logo" />
             <NavlinksContainer>
                 <SecLink onClick={() => history.push('/frame')}>Home</SecLink>
                 <SecLink onClick={() => history.push('/twist')}>about</SecLink>

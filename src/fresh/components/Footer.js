@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from '../../assets/logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Background from '../../assets/footer-illustration.svg';
+import FullLogo from '../../assets/logo_full.png';
 
 const FooterContainer = styled.footer`
-    padding: 25px 180px;
+    padding: 25px 20%;
     min-height: 15vh;
     position: relative;
 
@@ -50,11 +50,18 @@ const Icon = styled.div`
         opacity: 1;
     }
 `;
+
+const Logo = styled.img`
+    height: 100px;
+    width: 200px;
+    cursor: pointer;
+`;
+
 const FooterSection = () => {
     return (
         <FooterContainer>
             <SocialsContainer>
-                <img src={Logo} style={{ height: '30px', width: '30px', opacity: '0.6', cursor: 'pointer' }} alt="logo" />
+                <Logo src={FullLogo} alt="logo" />
                 <SocialContainer>
                     <Icon><FontAwesomeIcon icon={faFacebook} size="lg" /></Icon>
                     <Icon><FontAwesomeIcon icon={faTwitter} size="lg" /></Icon>
