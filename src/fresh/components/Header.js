@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import Logo from '../../assets/sv_logo.png'
+import Nav from './Nav';
 
 const HeaderContainer = styled.header`
     background-color: transparent;
@@ -30,7 +31,7 @@ const NavlinksContainer = styled.div`
 const SecLink = styled.a`
     font-size: 1rem;
     color: ${props => props.theme.linkColor};
-    font-family: ${props => props.theme.sectionFontFamily};
+    font-family: 'Fira sans', sans-serif;
     text-decoration: none;
     font-weight: 600;
     margin: 0 30px;
@@ -50,11 +51,12 @@ const Header = () => {
         <HeaderContainer>
             <img src={Logo} style={{ height: '50px', width: '50px', cursor: 'pointer' }} alt="logo" />
             <NavlinksContainer>
-                <SecLink onClick={() => history.push('/frame')}>Home</SecLink>
-                <SecLink onClick={() => history.push('/twist')}>about</SecLink>
-                <SecLink onClick={() => history.push('/tidy')}>profile</SecLink>
-                <SecLink onClick={() => history.push('/sketch')}>contact</SecLink>
+                <SecLink onClick={() => history.push('/home')}>Home</SecLink>
+                <SecLink onClick={() => history.push('/about')}>about</SecLink>
+                <SecLink onClick={() => history.push('/skills')}>profile</SecLink>
+                <SecLink onClick={() => history.push('/contact')}>contact</SecLink>
             </NavlinksContainer>
+            <Nav />
         </HeaderContainer>
     );
 };

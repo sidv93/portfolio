@@ -17,6 +17,10 @@ const Container = styled.div`
     background-position: 50% 0%;
     background-size: auto;
     background-attachment: fixed;
+
+    max-width: 100vw;
+    width: 100vw;
+    overflow-x: hidden;
 `;
 
 function App() {

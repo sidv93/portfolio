@@ -8,26 +8,18 @@ const Banner = styled.section`
     position: relative;
     min-height: 100vh;
 
-    &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        max-width: 100%;
-        height: 100%;
-        /* background-image: url(${Background}); */
-        background-repeat: no-repeat;
-        background-size: auto;
-        /* background-attachment: fixed; */
-        left: 50%;
-        top: 0;
-        background-position: center top;
-        transform: translate(-50%);
-        z-index: -2;
+    @media(max-width: 960px) {
+        max-width: 960px;
+        /* width: 960px; */
     }
 `;
 const BannerContainer = styled.div`
     padding: 0 20%;
     font-family: ${props => props.theme.fontFamily}, sans-serif;
+
+    @media(max-width: 960px) {
+        padding: 10px;
+    }
 `;
 
 const Home = () => {

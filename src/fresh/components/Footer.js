@@ -10,6 +10,27 @@ const FooterContainer = styled.footer`
     min-height: 15vh;
     position: relative;
 
+    @media(max-width: 960px) {
+        padding: 10px;
+        padding-bottom: 80px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 1px;
+        background-color: #626F7F;
+        margin: 0 20%;
+        left: 0;
+        top: 0;
+
+        @media(max-width: 960px) {
+            width: 80%;
+            margin: 0 10%;
+        }
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -18,7 +39,7 @@ const FooterContainer = styled.footer`
         background-image: url(${Background});
         background-repeat: no-repeat;
         background-size: auto;
-        left: 50%;
+        left: 52%;
         bottom: 0;
         background-position: center top;
         transform: translate(-50%);
@@ -31,6 +52,10 @@ const SocialsContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
+
+    @media(max-width: 960px) {
+        flex-direction: column;
+    }
 `;
 
 const SocialContainer = styled.div`
@@ -38,6 +63,10 @@ const SocialContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
     align-items: center;
+
+    @media(max-width: 960px) {
+        margin: 30px 0;
+    }
 `;
 
 const Icon = styled.div`
@@ -55,6 +84,10 @@ const Logo = styled.img`
     height: 100px;
     width: 200px;
     cursor: pointer;
+
+    @media(max-width: 960px) {
+
+    }
 `;
 
 const FooterSection = () => {
