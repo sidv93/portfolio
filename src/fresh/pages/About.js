@@ -52,8 +52,8 @@ const About = () => {
             <AboutContainer>
                 <Heading>About me</Heading>
                 <Text>
-                    You can also call me a product designer, experience designer, interaction, UI, UX or by any other market defined function-title. I prefer to keep learning, continue challenging myself, and do interesting things that matter. My abundant energy fuels me in the pursuit of many interests, hobbies, areas of study and artistic endeavors. I’m a fast learner, able to pick up new skills and juggle different projects and roles with relative ease.
-                    I like to develop expertise in a number of areas over the course of my life and career. My personality type is ENTJ. I currently work remotely and have a full-time commitment at InVision. Outside of my commitments I work with a select freelance client base. Feel free to get in touch by any means of communication.
+                    I'm a Computer Science graduate from Bangalore, India. Now a fullstack developer at Asteria Aerospace. I've been building web and mobile apps for almost 5 years now. Previously, I was a Software Engineer at Aricent technologies.
+                    
            </Text>
             </AboutContainer>
         </Container>
