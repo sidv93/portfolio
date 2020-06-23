@@ -40,10 +40,6 @@ const AboutContainer = styled.div`
         padding: 10px;
     }
 `;
-const Heading = styled.h1`
-    font-family: 'Fira sans', sans-serif;
-    font-size: 2.6rem;
-`;
 const Text = styled.p`
     font-family: 'Fira sans', sans-serif;
     color: #626F7F;
