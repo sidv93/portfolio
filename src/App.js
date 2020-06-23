@@ -17,10 +17,13 @@ const Container = styled.div`
     background-position: 50% 0%;
     background-size: auto;
     background-attachment: fixed;
-
     max-width: 100vw;
     width: 100vw;
     overflow-x: hidden;
+
+    @media(max-width: 960px) {
+      background-position: 80% 0%;
+    }
 `;
 
 function App() {
@@ -60,8 +63,9 @@ function App() {
       <Footer />
       <ParticlesBg type="custom" config={config} bg={true} /> */}
       <Home />
-      <About />
+      
       <Profile />
+      {/* <About /> */}
       <Footer />
     </Container>
   );

@@ -52,9 +52,9 @@ const Header = () => {
             <img src={Logo} style={{ height: '50px', width: '50px', cursor: 'pointer' }} alt="logo" />
             <NavlinksContainer>
                 <SecLink onClick={() => history.push('/home')}>Home</SecLink>
-                <SecLink onClick={() => history.push('/about')}>about</SecLink>
-                <SecLink onClick={() => history.push('/skills')}>profile</SecLink>
-                <SecLink onClick={() => history.push('/contact')}>contact</SecLink>
+                {/* <SecLink onClick={() => history.push('/about')}>about</SecLink> */}
+                <SecLink onClick={() => history.push('/profile')}>profile</SecLink>
+                {/* <SecLink onClick={() => history.push('/contact')}>contact</SecLink> */}
             </NavlinksContainer>
             <Nav />
         </HeaderContainer>

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import Background from '../../assets/home-background.svg';
 import Banners from '../components/Banner';
 
 const Banner = styled.section`
@@ -10,7 +9,6 @@ const Banner = styled.section`
 
     @media(max-width: 960px) {
         max-width: 960px;
-        /* width: 960px; */
     }
 `;
 const BannerContainer = styled.div`

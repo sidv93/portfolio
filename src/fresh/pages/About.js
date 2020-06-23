@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,13 +23,17 @@ const Container = styled.div`
             margin: 0 10%;
         }
     }
+
+    @media(max-width: 960px) {
+            margin: 0 20px;
+        }
 `;
 const AboutContainer = styled.div`
     padding: 0 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 
     @media(max-width: 960px) {
         max-width: 960px;
@@ -38,23 +42,30 @@ const AboutContainer = styled.div`
 `;
 const Heading = styled.h1`
     font-family: 'Fira sans', sans-serif;
+    font-size: 2.6rem;
 `;
 const Text = styled.p`
     font-family: 'Fira sans', sans-serif;
     color: #626F7F;
     font-size: 1.4rem;
-    text-align: center;
+    /* text-align: center; */
+`;
+const Hi = styled.a`
+    font-size: 2rem;
+    font-family: 'Fira sans', sans-serif;
+    text-decoration: underline;
+    font-family: 'Indie Flower', cursive;
 `;
 
 const About = () => {
     return (
         <Container>
             <AboutContainer>
-                <Heading>About me</Heading>
+                {/* <Heading>About me</Heading> */}
                 <Text>
-                    I'm a Computer Science graduate from Bangalore, India. Now a fullstack developer at Asteria Aerospace. I've been building web and mobile apps for almost 5 years now. Previously, I was a Software Engineer at Aricent technologies.
-                    
-           </Text>
+                    If you have anything interesting idea or just want to chat, I'm always down!
+                </Text>
+                <Hi>Just say hi</Hi>
             </AboutContainer>
         </Container>
     );

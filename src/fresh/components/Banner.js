@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProfilePicture from '../../assets/profile-picture.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 50px 20%;
+    padding: 50px 15%;
 
     @media(max-width: 960px) {
         max-width: 960px;
@@ -25,15 +27,14 @@ const Title = styled.h3`
     font-size: 2.6rem;
     font-weight: 500;
     text-align: center;
-    margin: 0;
-    margin-top: 30px;
+    margin: 30px 0;
 `;
 const Text = styled.p`
     font-size: 1.6rem;
     font-family: 'Fira sans', sans-serif;
     text-align: center;
     color: #626F7F;
-    margin: 20px 0;
+    margin: 5px 0;
 `;
 
 const Banner = () => {
@@ -42,7 +43,16 @@ const Banner = () => {
             <Picture src={ProfilePicture} alt="profile-picture" />
             <Title>Siddharth Venkatesh</Title>
             <Text>
-                I'm a Fullstack developer at Asteria Aerospace.
+                Fullstack developer at Asteria Aerospace.
+            </Text>
+            <Text>
+                Chennai born, Bangalore made, Introvert, INFP
+            </Text>
+            <Text>
+                <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Football <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Arsenal
+            </Text>
+            <Text>
+                Building tools for humans
             </Text>
         </Container>
     );

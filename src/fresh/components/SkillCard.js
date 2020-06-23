@@ -5,8 +5,8 @@ import Testimonial from './Testimonial';
 
 const skillset = [
     { title: 'Frontend stuff', entries: ['HTML', 'CSS', 'JavaScript', 'Angular', 'React', 'React native' ]},
-    { title: 'Backend stuff', entries: ['NodeJs', 'Express', 'MongoDB', 'PostgreSQL' ], transform: 'translateY(50px)'},
-    { title: 'Utility stuff', entries: ['Docker', 'Graphql', 'Git' ], transform: 'translateY(-50px)'}
+    { title: 'Backend stuff', entries: ['NodeJs', 'Express', 'MongoDB', 'PostgreSQL' ], transform: 'scale(1.1)'},
+    { title: 'Utility stuff', entries: ['Docker', 'Graphql', 'Git' ], transform: 'translateY(0px)'}
 ];
 
 const Container = styled.div`
@@ -14,7 +14,6 @@ const Container = styled.div`
     padding: 100px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: flex-start;
     gap: 25px;
 
     &:after {
@@ -32,6 +31,10 @@ const Container = styled.div`
         transform: translate(-50%, -50%);
         z-index: -2;
     }
+
+    @media(max-width: 960px) {
+        display: block;
+    }
 `;
 
 
@@ -41,9 +44,6 @@ const SkillCard = () => {
             {
                 skillset.map((item, index) => <Testimonial key={String(index)} skill={item} />)
             }
-            {/* <Testimonial key={String(0)} skill={skillset[0]} /> */}
-            {/* <Testimonial key={String(1)} skill={skillset[1]} />
-            <Testimonial key={String(2)} skill={skillset[2]} /> */}
         </Container>
     );
 };

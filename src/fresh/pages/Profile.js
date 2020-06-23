@@ -5,9 +5,11 @@ import SkillCard from '../components/SkillCard';
 const Container = styled.div`
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-bottom: 30px;
 
     &:before {
         content: '';
@@ -24,33 +26,57 @@ const Container = styled.div`
             margin: 0 10%;
         }
     }
+
+    @media(max-width: 960px) {
+            margin: 0 20px;
+        }
 `;
 const ProfileContainer = styled.div`
-    padding: 0 20%;
+    padding: 30px 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 
     @media(max-width: 960px) {
         max-width: 960px;
         padding: 10px;
+        display: block;
     }
 `;
 const Heading = styled.h1`
     font-family: 'Fira sans', sans-serif;
+    font-size: 2.6rem;
 `;
 const Text = styled.p`
     font-family: 'Fira sans', sans-serif;
     color: #626F7F;
     font-size: 1.4rem;
-    text-align: center;
+    margin: 10px 0;
 `;
-const Skills = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+const ResumeText = styled.p`
+    font-family: 'Fira sans', sans-serif;
+    font-size: 1.6rem;
+    color: #626F7F;
+    padding: 0 10px;
 `;
+const ChatText = styled.p`
+    font-family: 'Fira sans', sans-serif;
+    color: #626F7F;
+    font-size: 1.4rem;
+    margin-top: 50px;
+`;
+const Hi = styled.a`
+    font-size: 5rem;
+    font-family: 'Sacramento', cursive;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+`;
+
 const Profile = () => {
     return (
         <Container>
@@ -58,15 +84,29 @@ const Profile = () => {
                 <Heading>Profile</Heading>
                 <Text>
                     I love everything JavaScript, but also would not mind learning a new stuff, if it means better a better experience.
+                </Text>
+                <Text>
                     Been working with Angular for the majority of my work life, but I've found a new liking for React over the last year or two.
+                </Text>
+                <Text>
                     I've also been quite taken by React Native lately. There's some pretty interesting stuff going on there.
+                </Text>
+                <Text>
                     In terms of backend stuff, I mostly use Express, and MongoDb and PostgreSQL.
-
+                </Text>
+                <Text>
                     Here is a small selection of relevant stuff I do.
                 </Text>
                 <SkillCard />
             </ProfileContainer>
-        </Container>
+            <ResumeText>
+                There is a bit more stuff about me in my <span style={{ fontSize: '2rem', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline' }}>Resume</span>
+            </ResumeText>
+            <ChatText >
+                If you have anything interesting to say idea or just want to chat, I'm always down!
+            </ChatText>
+            <Hi href="mailto:siddhuv93@gmail.com">Just say hi!</Hi>
+        </Container >
     );
 };
 
