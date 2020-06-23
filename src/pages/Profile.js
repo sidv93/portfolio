@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SkillCard from '../components/SkillCard';
+import SkillCards from '../components/SkillCards';
 
 const Container = styled.div`
     min-height: 100vh;
@@ -97,7 +97,7 @@ const Profile = () => {
                 <Text>
                     Here is a small selection of relevant stuff I do.
                 </Text>
-                <SkillCard />
+                <SkillCards />
             </ProfileContainer>
             <ResumeText>
                 There is a bit more stuff about me in my <span style={{ fontSize: '2rem', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline' }}>Resume</span>

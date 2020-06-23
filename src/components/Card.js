@@ -19,7 +19,7 @@ const Container = styled.div`
         margin: 20px 0;
     }
 `;
-const Author = styled.h2`
+const Title = styled.h2`
     font-size: 1.2rem;
     font-weight: 600;
     font-family: 'Fira sans', sans-serif;
@@ -67,7 +67,7 @@ const ListElement = styled.div`
         height: 1px;
     }
 `;
-const Included = styled.p`
+const Skill = styled.p`
     font-family: 'Fira sans', sans-serif;
     color: #626F7F;
     font-size: 1.1rem;
@@ -75,17 +75,16 @@ const Included = styled.p`
     text-align: center;
 `;
 
-const Testinomial = ({ skill }) => {
+const Card = ({ skill }) => {
     return (
         <Container transform={skill.transform}>
-            <Author>{skill.title}</Author>
-            {/* <Text>{skill.text}</Text> */}
+            <Title>{skill.title}</Title>
             <ListContainer>
                 {
                     skill.entries.map((item, index) => {
                         return (
                             <ListElement key={String(index)}>
-                                <Included>{item}</Included>
+                                <Skill>{item}</Skill>
                             </ListElement>
                         )
                     })
@@ -95,4 +94,4 @@ const Testinomial = ({ skill }) => {
     );
 };
 
-export default Testinomial;
+export default Card;

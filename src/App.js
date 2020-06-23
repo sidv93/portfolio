@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Home from './fresh/pages/Home';
+import Home from './pages/Home';
 import styled from 'styled-components';
-import Footer from './fresh/components/Footer';
-import Profile from './fresh/pages/Profile';
+import Footer from './components/Footer';
+import Profile from './pages/Profile';
 import Background from './assets/home-background.svg';
 
 const Container = styled.div`

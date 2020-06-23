@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -16,7 +16,7 @@ const Container = styled.div`
         width: 30px;
         height: 2px;
         border-radius: 1px;
-        background-color: #fff;
+        background-color: black;
         top: 15px;
         left: 10px;
         opacity: 0.6;
@@ -29,18 +29,22 @@ const Container = styled.div`
         width: 30px;
         height: 2px;
         border-radius: 1px;
-        background-color: #fff;
+        background-color: black;
         bottom: 15px;
         left: 10px;
         opacity: 0.6;
         transform: ${props => props.hovered ? 'translateX(-5px)' : 'translateX(0)'};
+    }
+
+    @media(max-width: 960px) {
+        display: flex;
     }
 `;
 
 const NavIcon = styled.div`
     width: 30px;
     height: 2px;
-    background-color: #fff;
+    background-color: black;
     border-radius: 1px;
     opacity: 0.6;
     transform: ${props => props.hovered ? 'translateX(5px)' : 'translateX(0)'};

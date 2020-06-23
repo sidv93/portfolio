@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Background from '../../assets/card-background.svg';
-import Testimonial from './Testimonial';
+import Background from '../assets/card-background.svg';
+import Card from './Card';
 
 const skillset = [
     { title: 'Frontend stuff', entries: ['HTML', 'CSS', 'JavaScript', 'Angular', 'React', 'React native' ]},
@@ -42,7 +42,7 @@ const SkillCard = () => {
     return (
         <Container>
             {
-                skillset.map((item, index) => <Testimonial key={String(index)} skill={item} />)
+                skillset.map((item, index) => <Card key={String(index)} skill={item} />)
             }
         </Container>
     );

@@ -1,20 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
-import Introduction from '../components/Introduction';
+import Header from '../components/Header';
+import Banners from '../components/Banner';
 
-const Container = styled.div`
-    display: flex;
-    align-items: center;
-    min-height: 90vh;
-    height: 90vh;
-    padding: 0 10%;
+const Banner = styled.section`
+    position: relative;
+    min-height: 100vh;
+
+    @media(max-width: 960px) {
+        max-width: 960px;
+    }
+`;
+const BannerContainer = styled.div`
+    padding: 0 20%;
+
+    @media(max-width: 960px) {
+        padding: 10px;
+    }
 `;
 
 const Home = () => {
     return (
-        <Container>
-            <Introduction />
-        </Container>
+        <Banner>
+            <BannerContainer>
+                <Header />
+                <Banners />
+            </BannerContainer>
+        </Banner>
     );
 };
 
