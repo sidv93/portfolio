@@ -83,7 +83,6 @@ const Icon = styled.div`
 const Logo = styled.img`
     height: 100px;
     width: 200px;
-    cursor: pointer;
 
     @media(max-width: 960px) {
 
