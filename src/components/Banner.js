@@ -46,7 +46,7 @@ const Banner = () => {
                 Fullstack developer at Asteria Aerospace.
             </Text>
             <Text>
-                Chennai born, Bangalore made, Introvert, INFP
+                Chennai born, Bangalore made, INFP
             </Text>
             <Text>
                 <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Football <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Arsenal
