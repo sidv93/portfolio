@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
     background-color: ${props => props.theme.buttonTextColor};
     min-width: 250px;
     box-shadow: 0 32px 64px rgba(16,22,65,0.24);

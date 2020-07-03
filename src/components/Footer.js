@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Background from '../assets/footer-illustration.svg';
 import FullLogo from '../assets/logo_full.png';
+import { motion } from 'framer-motion';
 
-const FooterContainer = styled.footer`
+const FooterContainer = styled(motion.footer)`
     padding: 25px 20%;
     min-height: 15vh;
     position: relative;
@@ -83,15 +84,11 @@ const Icon = styled.div`
 const Logo = styled.img`
     height: 100px;
     width: 200px;
-
-    @media(max-width: 960px) {
-
-    }
 `;
 
 const FooterSection = () => {
     return (
-        <FooterContainer>
+        <FooterContainer initial={{opacity: 0}} animate={{opacity:  1}} transition={{duration: 1}}>
             <SocialsContainer>
                 <Logo src={FullLogo} alt="logo" />
                 <SocialContainer>

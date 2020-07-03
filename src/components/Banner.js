@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ProfilePicture from '../assets/profile-picture.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
     display: flex;
@@ -14,7 +15,7 @@ const Container = styled.div`
         padding: 50px 10px;
     }
 `;
-const Picture = styled.img`
+const Picture = styled(motion.img)`
     height: 250px;
     width: 250px;
     border-radius: 50%;
@@ -36,24 +37,52 @@ const Text = styled.p`
     color: #626F7F;
     margin: 5px 0;
 `;
+const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            delay: 0.3,
+            when: "beforeChildren",
+            staggerChildren: 0.1
+        }
+    }
+};
+
+const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1
+    }
+};
 
 const Banner = () => {
     return (
         <Container>
-            <Picture src={ProfilePicture} alt="profile-picture" />
-            <Title>Siddharth Venkatesh</Title>
-            <Text>
-                Fullstack developer at Asteria Aerospace.
-            </Text>
-            <Text>
-                Chennai born, Bangalore made, INFP
-            </Text>
-            <Text>
-                <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Football <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Arsenal
-            </Text>
-            <Text>
-                Building tools for humans
-            </Text>
+            <Picture initial={{ scale: 0 }}
+                animate={{ rotate: 360, scale: 1 }}
+                transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20
+                }} src={ProfilePicture} alt="profile-picture" />
+            <motion.div variants={container} initial="hidden" animate="visible">
+                <Title variants={item}>Siddharth Venkatesh</Title>
+                <Text variants={item}>
+                    Fullstack developer at Asteria Aerospace.
+                </Text>
+                <Text variants={item}>
+                    Chennai born, Bangalore made, INFP
+                </Text>
+                <Text variants={item}>
+                    <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Football <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Arsenal
+                </Text>
+                <Text variants={item}>
+                    Building tools for humans
+                </Text>
+            </motion.div>
         </Container>
     );
 };

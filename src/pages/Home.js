@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from '../components/Header';
 import Banners from '../components/Banner';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-const Banner = styled.section`
+const Banner = styled(motion.section)`
     position: relative;
     min-height: 100vh;
 
@@ -20,10 +21,12 @@ const BannerContainer = styled.div`
 `;
 
 const Home = () => {
+    const [ref, inView] = useInView({
+        threshold: 0.3
+    });
     return (
-        <Banner>
+        <Banner ref={ref} initial={{opacity: 0}} animate={{opacity:  inView ? 1 : 0 }} transition={{duration: 1}}>
             <BannerContainer>
-                <Header />
                 <Banners />
             </BannerContainer>
         </Banner>
