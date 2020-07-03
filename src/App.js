@@ -27,7 +27,7 @@ const App = () => {
   const [mode, setMode] = useState('light');
   return (
     <Container>
-      <Header mode={mode} />
+      <Header mode={mode} setMode={setMode} />
       <Home />
       <Profile />
       <Footer />
