@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from '../assets/sv_logo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import Nav from './Nav';
+import { motion } from 'framer-motion';
 
-const HeaderContainer = styled.header`
+const HeaderContainer = styled(motion.header)`
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 0;
+    padding: 25px 20%;
 
     @media(max-width: 960px) {
         margin: auto;
@@ -27,35 +31,27 @@ const NavlinksContainer = styled.div`
     }
 `;
 
-const SecLink = styled.a`
-    font-size: 1rem;
-    color: ${props => props.theme.linkColor};
-    font-family: 'Fira Sans', sans-serif;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 30px;
-    font-weight: 500;
-    text-transform: uppercase;
-    position: relative;
-    cursor: pointer;
-
-    &:hover {
-        color: #2174EA
-    }
-`;
 const Logos = styled.img`
     height: 50px;
     width: 50px;
     cursor: pointer;
 `;
+const ModeIcon = styled.div`
+    cursor: pointer;
+    opacity: 0.6;
 
-const Header = () => {
+    &:hover {
+        opacity: 1;
+    }
+`;
+
+const Header = ({mode}) => {
     return (
-        <HeaderContainer>
+        <HeaderContainer initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}}>
             <Logos src={Logo} alt="logo" />
             <NavlinksContainer>
-                <SecLink>Home</SecLink>
-                <SecLink>profile</SecLink>
+                {mode === 'dark' && <ModeIcon><FontAwesomeIcon icon={faSun} size="2x" /></ModeIcon> }
+                {mode === 'light' && <ModeIcon><FontAwesomeIcon icon={faMoon} size="2x" /></ModeIcon> }
             </NavlinksContainer>
             <Nav />
         </HeaderContainer>
