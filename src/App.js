@@ -24,10 +24,10 @@ const Container = styled.div`
 `;
 
 const App = () => {
-  const [mode, setMode] = useState('light');
+  const [lightMode, toggleMode] = useState(true);
   return (
     <Container>
-      <Header mode={mode} setMode={setMode} />
+      <Header lightMode={lightMode} toggleMode={toggleMode} />
       <Home />
       <Profile />
       <Footer />

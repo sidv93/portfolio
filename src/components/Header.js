@@ -36,7 +36,7 @@ const Logos = styled.img`
     width: 50px;
     cursor: pointer;
 `;
-const ModeIcon = styled.div`
+const ModeIcon = styled(motion.div)`
     cursor: pointer;
     opacity: 0.6;
 
@@ -45,13 +45,13 @@ const ModeIcon = styled.div`
     }
 `;
 
-const Header = ({mode, setMode}) => {
+const Header = ({lightMode, toggleMode}) => {
     return (
         <HeaderContainer initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}}>
             <Logos src={Logo} alt="logo" />
             <NavlinksContainer>
-                {mode === 'dark' && <ModeIcon><FontAwesomeIcon icon={faSun} size="2x" /></ModeIcon> }
-                {mode === 'light' && <ModeIcon><FontAwesomeIcon icon={faMoon} size="2x" /></ModeIcon> }
+                {!lightMode && <ModeIcon initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2}} onClick={() => toggleMode(true)}><FontAwesomeIcon icon={faSun} size="2x" /></ModeIcon> }
+                {lightMode && <ModeIcon initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2}} onClick={() => toggleMode(false)}><FontAwesomeIcon icon={faMoon} size="2x" /></ModeIcon> }
             </NavlinksContainer>
             <Nav />
         </HeaderContainer>
