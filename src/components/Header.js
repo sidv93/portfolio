@@ -4,7 +4,6 @@ import Logo from '../assets/sv_logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
-import Nav from './Nav';
 import { motion } from 'framer-motion';
 
 const HeaderContainer = styled(motion.header)`
@@ -17,7 +16,7 @@ const HeaderContainer = styled(motion.header)`
     @media(max-width: 960px) {
         margin: auto;
         max-width: 960px;
-        padding: 10px;
+        padding: 20px;
     }
 `;
 
@@ -27,7 +26,7 @@ const NavlinksContainer = styled.div`
     justify-content: space-between;
 
     @media(max-width: 960px) {
-        display: none;
+        /* display: none; */
     }
 `;
 
@@ -53,7 +52,6 @@ const Header = ({lightMode, toggleMode}) => {
                 {!lightMode && <ModeIcon initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2}} onClick={() => toggleMode(true)}><FontAwesomeIcon icon={faSun} size="2x" /></ModeIcon> }
                 {lightMode && <ModeIcon initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2}} onClick={() => toggleMode(false)}><FontAwesomeIcon icon={faMoon} size="2x" /></ModeIcon> }
             </NavlinksContainer>
-            <Nav />
         </HeaderContainer>
     );
 };
