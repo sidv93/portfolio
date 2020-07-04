@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Background from '../assets/footer-illustration.svg';
 import FullLogo from '../assets/logo_full.png';
 import { motion } from 'framer-motion';
+
+const socials = {
+    facebook: 'https://www.facebook.com/siddharth.venkatesh.5',
+    twitter: 'https://twitter.com/siddhu93',
+    github: 'https://github.com/sidv93',
+    linkedIn: 'https://www.linkedin.com/in/siddharth-venkatesh-b3a886ba/'
+};
 
 const FooterContainer = styled(motion.footer)`
     padding: 25px 20%;
@@ -61,7 +68,7 @@ const SocialsContainer = styled.div`
 
 const SocialContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
     align-items: center;
 
@@ -84,19 +91,28 @@ const Icon = styled.div`
 const Logo = styled.img`
     height: 100px;
     width: 200px;
+    cursor: pointer;
 `;
 
 const FooterSection = () => {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+    const open = (url) => {
+        window.open(url, '_blank');
+    }
     return (
-        <FooterContainer initial={{opacity: 0}} animate={{opacity:  1}} transition={{duration: 1}}>
+        <FooterContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
             <SocialsContainer>
-                <Logo src={FullLogo} alt="logo" />
+                <Logo src={FullLogo} alt="logo" onClick={scrollToTop} />
                 <SocialContainer>
-                    <Icon><FontAwesomeIcon icon={faFacebook} size="lg" /></Icon>
-                    <Icon><FontAwesomeIcon icon={faTwitter} size="lg" /></Icon>
-                    <Icon><FontAwesomeIcon icon={faGithub} size="lg" /></Icon>
-                    <Icon><FontAwesomeIcon icon={faLinkedin} size="lg" /></Icon>
-                    <Icon><FontAwesomeIcon icon={faInstagram} size="lg" /></Icon>
+                    <Icon onClick={() => open(socials.facebook)}><FontAwesomeIcon icon={faFacebook} size="lg" /></Icon>
+                    <Icon onClick={() => open(socials.twitter)}><FontAwesomeIcon icon={faTwitter} size="lg" /></Icon>
+                    <Icon onClick={() => open(socials.github)}><FontAwesomeIcon icon={faGithub} size="lg" /></Icon>
+                    <Icon onClick={() => open(socials.linkedIn)}><FontAwesomeIcon icon={faLinkedin} size="lg" /></Icon>
                 </SocialContainer>
             </SocialsContainer>
         </FooterContainer>
