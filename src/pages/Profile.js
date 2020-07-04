@@ -83,29 +83,37 @@ const Profile = () => {
     const [ref, inView] = useInView({
         threshold: 0.1
     });
+    const [textRef, textInView] = useInView({
+        threshold: 0.5
+    });
+    const downloadResume = () => {
+        window.open(process.env.PUBLIC_URL + '/SiddharthVenkatesh.pdf', '_blank');
+    }
     return (
-        <Container ref={ref} initial={{opacity: 0}} animate={{opacity:  inView ? 1: 0}} transition={{duration: 1}}>
+        <Container ref={ref} initial={{ opacity: 0 }} animate={{ opacity: inView ? 1 : 0 }} transition={{ duration: 1 }}>
             <ProfileContainer>
                 <Heading>Profile</Heading>
-                <Text>
-                    I love everything JavaScript, but also would not mind learning a new stuff, if it means better a better experience.
-                </Text>
-                <Text>
-                    Been working with Angular for the majority of my work life, but I've found a new liking for React over the last year or two.
-                </Text>
-                <Text>
-                    I've also been quite taken by React Native lately. There's some pretty interesting stuff going on there.
-                </Text>
-                <Text>
-                    In terms of backend stuff, I mostly use Express, and MongoDb and PostgreSQL.
-                </Text>
-                <Text>
-                    Here is a small selection of relevant stuff I do.
-                </Text>
+                <motion.div ref={textRef} initial={{ opacity: 0 }} animate={{ opacity: textInView ? 1 : 0 }} transition={{ duration: 1 }}>
+                    <Text>
+                        I love everything JavaScript, but also would not mind learning a new stuff, if it means better a better experience.
+                    </Text>
+                    <Text>
+                        Been working with Angular for the majority of my work life, but I've found a new liking for React over the last year or two.
+                    </Text>
+                    <Text>
+                        I've also been quite taken by React Native lately. There's some pretty interesting stuff going on there.
+                    </Text>
+                    <Text>
+                        In terms of backend stuff, I mostly use Express, and MongoDb and PostgreSQL.
+                    </Text>
+                    <Text>
+                        Here is a small selection of relevant stuff I do.
+                    </Text>
+                </motion.div>
                 <SkillCards />
             </ProfileContainer>
             <ResumeText>
-                There is a bit more stuff about me in my <span style={{ fontSize: '2rem', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline' }}>Resume</span>
+                There is a bit more stuff about me in my <span onClick={downloadResume} style={{ fontSize: '2rem', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline', color: '#626F7F' }}>Resume</span>
             </ResumeText>
             <ChatText >
                 If you have anything interesting to say idea or just want to chat, I'm always down!
