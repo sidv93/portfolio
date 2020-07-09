@@ -84,7 +84,7 @@ const Profile = () => {
         threshold: 0.1
     });
     const [textRef, textInView] = useInView({
-        threshold: 0.5
+        threshold: 0.3
     });
     const downloadResume = () => {
         window.open(process.env.PUBLIC_URL + '/SiddharthVenkatesh.pdf', '_blank');
