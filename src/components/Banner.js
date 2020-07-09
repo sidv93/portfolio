@@ -77,7 +77,11 @@ const Banner = () => {
                     Chennai born, Bangalore made, INFP
                 </Text>
                 <Text variants={item}>
-                    <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Football <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> Arsenal
+                    <FontAwesomeIcon icon={faHeart} color='red' size="sm" />
+                    &nbsp; Football &nbsp;
+                    <FontAwesomeIcon icon={faHeart} color='red' size="sm" />
+                    &nbsp; Arsenal &nbsp;
+                    <FontAwesomeIcon icon={faHeart} color='red' size="sm" /> 
                 </Text>
                 <Text variants={item}>
                     Building tools for humans

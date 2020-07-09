@@ -95,19 +95,25 @@ const Profile = () => {
                 <Heading>Profile</Heading>
                 <motion.div ref={textRef} initial={{ opacity: 0 }} animate={{ opacity: textInView ? 1 : 0 }} transition={{ duration: 1 }}>
                     <Text>
-                        I love everything JavaScript, but also would not mind learning a new stuff, if it means better a better experience.
+                        I love everything JavaScript, and most of my work revolves around it.
                     </Text>
                     <Text>
-                        Been working with Angular for the majority of my work life, but I've found a new liking for React over the last year or two.
+                        Been working with Angular for the majority of my work life, and I've found a new liking for React over the last year or two.
                     </Text>
                     <Text>
-                        I've also been quite taken by React Native lately. There's some pretty interesting stuff going on there.
+                        I have taken up React Native in the past few months and loving it so far.
                     </Text>
                     <Text>
-                        In terms of backend stuff, I mostly use Express, and MongoDb and PostgreSQL.
+                        I also enjoy designing and developing backend APIs. Been building APIs with Express and MongoDB for years now.
                     </Text>
                     <Text>
-                        Here is a small selection of relevant stuff I do.
+                        GraphQL is also something I've come to love and appreciate in the past year.
+                    </Text>
+                    <Text>
+                        My latest fascination is micro-interactions and animations, and I've taken it as a hobby to come up with slick transitions.
+                    </Text>
+                    <Text style={{ marginTop: '50px'}}>
+                        Here is a small selection of relevant stuff I do
                     </Text>
                 </motion.div>
                 <SkillCards />
@@ -118,7 +124,7 @@ const Profile = () => {
             <ChatText >
                 If you have anything interesting to say idea or just want to chat, I'm always down!
             </ChatText>
-            <Hi href="mailto:siddhuv93@gmail.com">Just say hi!</Hi>
+            <Hi href="mailto:siddhuv93@gmail.com">Say hi!</Hi>
         </Container >
     );
 };
