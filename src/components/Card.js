@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const Container = styled(motion.div)`
-    background-color: ${props => props.theme.buttonTextColor};
     min-width: 250px;
     box-shadow: 0 32px 64px rgba(16,22,65,0.24);
     display: flex;
@@ -26,6 +25,7 @@ const Title = styled.h2`
     font-weight: 600;
     font-family: 'Fira sans', sans-serif;
     margin: 0;
+    color: ${props => props.theme.titleColor};
 `;
 const ListContainer = styled.div`
     position: relative;

@@ -48,10 +48,11 @@ const ProfileContainer = styled.div`
 const Heading = styled.h1`
     font-family: 'Fira sans', sans-serif;
     font-size: 2.6rem;
+    color: ${props => props.theme.titleColor};
 `;
 const Text = styled.p`
     font-family: 'Fira sans', sans-serif;
-    color: #626F7F;
+    color: ${props => props.theme.textColor};
     font-size: 1.4rem;
     margin: 10px 0;
 `;
@@ -73,13 +74,14 @@ const Hi = styled.a`
     color: black;
     text-decoration: none;
     cursor: pointer;
+    color: ${props => props.theme.textColor};
 
     &:hover {
         text-decoration: underline;
     }
 `;
 
-const Profile = () => {
+const Profile = ({lightMode}) => {
     const [ref, inView] = useInView({
         threshold: 0.1
     });
@@ -116,10 +118,12 @@ const Profile = () => {
                         Here is a small selection of relevant stuff I do
                     </Text>
                 </motion.div>
-                <SkillCards />
+                <SkillCards lightMode={lightMode} />
             </ProfileContainer>
             <ResumeText>
-                There is a bit more stuff about me in my <span onClick={downloadResume} style={{ fontSize: '2rem', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline', color: '#626F7F' }}>Resume</span>
+                There is a bit more stuff about me in my
+                &nbsp;
+                <span onClick={downloadResume} style={{ fontSize: '2rem', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline', color: '#626F7F' }}>Resume</span>
             </ResumeText>
             <ChatText >
                 If you have anything interesting to say idea or just want to chat, I'm always down!

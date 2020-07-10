@@ -20,7 +20,7 @@ const Picture = styled(motion.img)`
     width: 250px;
     border-radius: 50%;
     align-self: center;
-    border: 1px solid #626F7F;
+    border: 2px solid #FFF;
     box-shadow: 12px 32px 88px rgba(35,46,59,0.24);
 `;
 const Title = styled.h3`
@@ -29,12 +29,13 @@ const Title = styled.h3`
     font-weight: 500;
     text-align: center;
     margin: 30px 0;
+    color: ${props => props.theme.titleColor}
 `;
 const Text = styled.p`
     font-size: 1.6rem;
     font-family: 'Fira sans', sans-serif;
     text-align: center;
-    color: #626F7F;
+    color: ${props => props.theme.textColor};
     margin: 5px 0;
 `;
 const container = {

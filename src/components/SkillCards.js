@@ -22,18 +22,20 @@ const Container = styled.div`
         width: 200%;
         max-width: 200%;
         height: 630px;
-        background-image: url(${Background});
+        background-image: ${props => props.lightMode ? `url(${Background})` : 'none'};
+        /* background-image: url(${Background}); */
         background-repeat: no-repeat;
         background-size: auto;
         background-position: center;
         left: 50%;
         top: 52%;
         transform: translate(-50%, -50%);
-        z-index: -2;
+        z-index: -1;
     }
 
     @media(max-width: 960px) {
         display: block;
+        background-image: none;
     }
 `;
 

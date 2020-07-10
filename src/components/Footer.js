@@ -40,19 +40,25 @@ const FooterContainer = styled(motion.footer)`
         }
     }
 
-    &::after {
+    &:after {
         content: '';
         position: absolute;
-        width: 100%;
+        width: 20%;
         height: 100px;
         background-image: url(${Background});
         background-repeat: no-repeat;
         background-size: auto;
-        left: 52%;
+        left: 48%;
         bottom: 0;
         background-position: center top;
         transform: translate(-50%);
-        z-index: -2;
+        z-index: 2;
+        opacity: ${props => !props.lightMode ? 0.1 : 1};
+
+        @media(max-width: 960px) {
+            left: 47%;
+            width: 100%
+        }
     }
 `;
 
@@ -95,7 +101,7 @@ const Logo = styled.img`
     cursor: pointer;
 `;
 
-const FooterSection = () => {
+const FooterSection = ({lightMode}) => {
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -106,7 +112,7 @@ const FooterSection = () => {
         window.open(url, '_blank');
     }
     return (
-        <FooterContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+        <FooterContainer lightMode={lightMode} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
             <SocialsContainer>
                 <Logo src={FullLogo} alt="logo" onClick={scrollToTop} />
                 <SocialContainer>
