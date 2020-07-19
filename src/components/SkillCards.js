@@ -6,7 +6,7 @@ import Card from './Card';
 const skillset = [
     { title: 'Frontend stuff', entries: ['JavaScript', 'Angular', 'React', 'React native', 'HTML and CSS' ]},
     { title: 'Backend stuff', entries: ['NodeJs', 'Express', 'MongoDB', 'PostgreSQL' ], transform: 'scale(1.1)'},
-    { title: 'Utility stuff', entries: ['Docker', 'Graphql', 'Git' ], transform: 'translateY(0px)'}
+    { title: 'Utility stuff', entries: ['Docker', 'Graphql', 'Git', 'Grafana' ], transform: 'translateY(0px)'}
 ];
 
 const Container = styled.div`
