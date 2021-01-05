@@ -25,14 +25,14 @@ const Picture = styled(motion.div)`
 `;
 const Title = styled.h3`
     font-family: 'Fira sans', sans-serif;
-    font-size: 2.6rem;
+    font-size: 4.8rem;
     font-weight: 500;
     text-align: center;
     margin: 30px 0;
     color: ${props => props.theme.titleColor}
 `;
 const Text = styled.p`
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     font-family: 'Fira sans', sans-serif;
     text-align: center;
     color: ${props => props.theme.textColor};
@@ -59,7 +59,7 @@ const item = {
     }
 };
 
-const Banner = () => {
+const Banner = ({ lightMode }: { lightMode: boolean }) => {
     return (
         <Container>
             <Picture initial={{ scale: 0 }}
@@ -70,7 +70,7 @@ const Banner = () => {
                     damping: 20
                 }}>
                 <Image src="/profile-picture.jpg" width={250} height={250} alt="Profile picture" />
-                </Picture>
+            </Picture>
             <motion.div variants={container} initial="hidden" animate="visible">
                 <Title variants={item}>Siddharth Venkatesh</Title>
                 <Text variants={item}>

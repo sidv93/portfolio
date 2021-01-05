@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { FaSun } from 'react-icons/fa';
 import { FaMoon } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useThemeContext } from '../context/theme';
 
 const HeaderContainer = styled(motion.header)`
     background-color: transparent;
@@ -40,15 +41,16 @@ const ModeIcon = styled(motion.div)`
     }
 `;
 
-const Header = ({lightMode, toggleMode}) => {
+const Header = ({ lightMode, toggleMode }: { lightMode: boolean, toggleMode: () => void }) => {
+    const { theme, toggleTheme } = useThemeContext();
     return (
-        <HeaderContainer initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}}>
+        <HeaderContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
             <Logos>
                 <Image src="/sid_logo.svg" alt="Logo" height="50" width="50" />
             </Logos>
-            <NavlinksContainer>
-                {!lightMode && <ModeIcon initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2}} onClick={() => toggleMode(true)}><FaSun color="#FFF" size="24" /></ModeIcon> }
-                {lightMode && <ModeIcon initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2}} onClick={() => toggleMode(false)}><FaMoon size="24" /></ModeIcon> }
+            <NavlinksContainer onClick={() => toggleTheme()}>
+                { theme === 'dark' && <ModeIcon initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}><FaSun size="32" /></ModeIcon>}
+                { theme === 'light' && <ModeIcon initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}><FaMoon size="32" /></ModeIcon>}
             </NavlinksContainer>
         </HeaderContainer>
     );
