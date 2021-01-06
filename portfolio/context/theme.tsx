@@ -15,20 +15,21 @@ const darkTheme = {
 export function ThemeContextProvider({ children }) {
     const toggleTheme = () => {
         const toSet = theme === 'light' ? 'dark' : 'light';
-        // window.localStorage.setItem('theme', toSet);
+        window.localStorage.setItem('theme', toSet);
         setTheme(toSet);
     }
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('');
 
     useEffect(() => {
-        // const theme = localStorage.getItem('theme') || 'light';
-        // setTheme(theme);
+        const theme = localStorage.getItem('theme') || 'light';
+        setTheme(theme);
     }, []);
 
     return (
+        theme &&
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
             <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-                { children}
+                {children}
             </ThemeProvider>
         </ThemeContext.Provider>
     );
