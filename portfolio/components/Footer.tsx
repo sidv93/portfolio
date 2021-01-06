@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { FaFacebook, FaTwitter, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useThemeContext } from '@context/theme';
 
 const socials = {
     facebook: 'https://www.facebook.com/siddharth.venkatesh.5',
-    twitter: 'https://twitter.com/siddhu93',
+    twitter: 'https://twitter.com/sid_v12',
     github: 'https://github.com/sidv93',
     linkedIn: 'https://www.linkedin.com/in/siddharth-venkatesh-b3a886ba/',
-    instagram: 'https://www.instagram.com/_sid_v/'
+    instagram: 'https://www.instagram.com/sid.venkatesh/'
 };
 
 const FooterContainer = styled(motion.footer)`
@@ -42,7 +43,7 @@ const FooterContainer = styled(motion.footer)`
         position: absolute;
         width: 20%;
         height: 100px;
-        background-image: url('/footer-illustration.svg');
+        background-image: url('/assets/footer-illustration.svg');
         background-repeat: no-repeat;
         background-size: auto;
         left: 48%;
@@ -72,7 +73,7 @@ const SocialsContainer = styled.div`
 
 const SocialContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
     align-items: center;
 
@@ -98,7 +99,8 @@ const Logo = styled.div`
     cursor: pointer;
 `;
 
-const FooterSection = ({ lightMode }) => {
+const FooterSection = () => {
+    const { theme } = useThemeContext();
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -109,10 +111,10 @@ const FooterSection = ({ lightMode }) => {
         window.open(url, '_blank');
     }
     return (
-        <FooterContainer lightMode={lightMode} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+        <FooterContainer lightMode={theme === 'light'} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
             <SocialsContainer>
                 <Logo onClick={scrollToTop}>
-                    <Image src={'/sid_logo_text.svg'} alt="logo" height="100" width="100" />
+                    <Image src={'/assets/sid_logo_text.svg'} alt="logo" height="100" width="100" />
                 </Logo>
                 <SocialContainer>
                     <Icon onClick={() => open(socials.facebook)}><FaFacebook size="24" /></Icon>

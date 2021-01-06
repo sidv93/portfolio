@@ -23,10 +23,6 @@ const NavlinksContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    @media(max-width: 960px) {
-        /* display: none; */
-    }
 `;
 
 const Logos = styled.div`
@@ -41,15 +37,15 @@ const ModeIcon = styled(motion.div)`
     }
 `;
 
-const Header = ({ lightMode, toggleMode }: { lightMode: boolean, toggleMode: () => void }) => {
+const Header = () => {
     const { theme, toggleTheme } = useThemeContext();
     return (
         <HeaderContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
             <Logos>
-                <Image src="/sid_logo.svg" alt="Logo" height="50" width="50" />
+                <Image src="/assets/sid_logo.svg" alt="Logo" height="50" width="50" />
             </Logos>
             <NavlinksContainer onClick={() => toggleTheme()}>
-                { theme === 'dark' && <ModeIcon initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}><FaSun size="32" /></ModeIcon>}
+                { theme === 'dark' && <ModeIcon initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}><FaSun size="32" color="#FFF" /></ModeIcon>}
                 { theme === 'light' && <ModeIcon initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}><FaMoon size="32" /></ModeIcon>}
             </NavlinksContainer>
         </HeaderContainer>

@@ -117,7 +117,7 @@ const Profile = ({ lightMode }: { lightMode: boolean }) => {
                         Here is a small selection of relevant stuff I do
                     </Text>
                 </motion.div>
-                <SkillCards lightMode={lightMode} />
+                <SkillCards />
             </ProfileContainer>
             <ResumeText>
                 There is a bit more stuff about me in my
