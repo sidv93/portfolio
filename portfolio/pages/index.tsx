@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Header from '@components/Header';
 import Banner from '@components/Home';
+import Profile from '@components/Profile';
 import Footer from '@components/Footer';
 
 const transition = { duration: 1, ease: [0.6, 0.01, -0.05, 0.9] };
@@ -36,7 +37,7 @@ export default function Home() {
             </Head>
             <Header lightMode={true} toggleMode={() => {}} />
             <Banner lightMode={true} />
-            {/* <Profile lightMode={true} /> */}
+            <Profile lightMode={true} />
             <Footer lightMode={true} />
         </Container>
     )
