@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 import { FaHeart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -18,6 +17,8 @@ const Picture = styled(motion.div)`
     align-self: center;
     border: 2px solid #FFF;
     box-shadow: 12px 32px 88px rgba(35,46,59,0.24);
+    height: 250px;
+    width: 250px;
 
     img {
         border-radius: 50%;
@@ -79,7 +80,10 @@ const Banner = () => {
                     stiffness: 260,
                     damping: 20
                 }}>
-                <Image src="/assets/profile-picture.jpg" width={250} height={250} alt="Profile picture" />
+                <img
+                    // srcSet="/assets/profile-picture-tiny.webp 250w, /assets/profile-picture-small.webp 480w, /assets/profile-picture.webp 800w"
+                    // sizes="25vw"
+                    src="/assets/profile-picture-small.webp" width="250px" height="250px" alt="Profile picture" />
             </Picture>
             <motion.div variants={containerVariant} initial="hidden" animate="visible">
                 <Title variants={item} >Siddharth Venkatesh</Title>

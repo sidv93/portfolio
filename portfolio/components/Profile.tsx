@@ -80,7 +80,7 @@ const Hi = styled.a`
     }
 `;
 
-const Profile = ({ lightMode }: { lightMode: boolean }) => {
+const Profile = () => {
     const [ref, inView] = useInView({
         threshold: 0.1
     });

@@ -14,7 +14,6 @@ const Container = styled(motion.div)`
     background-position: 50% 0%;
     background-size: auto;
     background-attachment: fixed;
-    /* background-color: #FFF; */
     max-width: 100vw;
     width: 100vw;
     overflow-x: hidden;
@@ -34,7 +33,7 @@ export default function Home() {
             }}>
             <Header />
             <Banner />
-            <Profile lightMode={true} />
+            <Profile />
             <Footer />
         </Container>
     )

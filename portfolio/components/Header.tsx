@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 import { FaSun } from 'react-icons/fa';
 import { FaMoon } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -42,7 +41,7 @@ const Header = () => {
     return (
         <HeaderContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
             <Logos>
-                <Image src="/assets/sid_logo.svg" alt="Logo" height="50" width="50" />
+                <img src="/assets/sid_logo.svg" alt="Logo" height="50" width="50" />
             </Logos>
             <NavlinksContainer onClick={() => toggleTheme()}>
                 { theme === 'dark' && <ModeIcon initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}><FaSun size="32" color="#FFF" /></ModeIcon>}
