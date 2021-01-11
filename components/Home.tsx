@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { FaHeart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Container = styled.div`
     display: flex;
@@ -80,10 +81,8 @@ const Banner = () => {
                     stiffness: 260,
                     damping: 20
                 }}>
-                <img
-                    // srcSet="/assets/profile-picture-tiny.webp 250w, /assets/profile-picture-small.webp 480w, /assets/profile-picture.webp 800w"
-                    // sizes="25vw"
-                    src="/assets/profile-picture-small.webp" width="250px" height="250px" alt="Profile picture" />
+                <Image priority
+                    src="/assets/profile-picture.webp" width={250} height={250} alt="Profile picture" />
             </Picture>
             <motion.div variants={containerVariant} initial="hidden" animate="visible">
                 <Title variants={item} >Siddharth Venkatesh</Title>

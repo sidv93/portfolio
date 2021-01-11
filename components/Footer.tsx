@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { FaFacebook, FaTwitter, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useThemeContext } from '@context/theme';
+import Image from 'next/image';
 
 const socials = {
     facebook: 'https://www.facebook.com/siddharth.venkatesh.5',
@@ -113,7 +114,7 @@ const FooterSection = () => {
         <FooterContainer lightMode={theme === 'light'} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
             <SocialsContainer>
                 <Logo onClick={scrollToTop}>
-                    <img src={'/assets/sid_logo_text.svg'} alt="logo" height="100" width="100" />
+                    <Image src='/assets/sid_logo_text.svg' alt="logo" height={100} width={100} />
                 </Logo>
                 <SocialContainer>
                     <Icon onClick={() => open(socials.facebook)}><FaFacebook size="24" /></Icon>
