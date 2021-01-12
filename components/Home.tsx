@@ -82,7 +82,7 @@ const Banner = () => {
                     damping: 20
                 }}>
                 <Image priority
-                    src="/assets/profile-picture.webp" width={250} height={250} alt="Profile picture" />
+                    src="/assets/profile-picture-tiny.webp" width={250} height={250} alt="Profile picture" />
             </Picture>
             <motion.div variants={containerVariant} initial="hidden" animate="visible">
                 <Title variants={item} >Siddharth Venkatesh</Title>
