@@ -5,11 +5,13 @@ const ThemeContext = createContext({ theme: 'light', toggleTheme: () => { } });
 
 const lightTheme = {
     titleColor: '#232E3B',
-    textColor: '#626F7F'
+    textColor: '#626F7F',
+    backgroundColor: '#FFF'
 }
 const darkTheme = {
     titleColor: '#FFF',
-    textColor: '#626F7F'
+    textColor: '#626F7F',
+    backgroundColor: 'rgb(30, 34, 56)'
 }
 
 export function ThemeContextProvider({ children }) {

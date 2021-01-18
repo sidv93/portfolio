@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { motion } from 'framer-motion';
 import Header from '@components/Header';
 import Banner from '@components/Home';
@@ -6,7 +6,7 @@ import Profile from '@components/Profile';
 import Footer from '@components/Footer';
 import { useThemeContext } from '@context/theme';
 
-const transition = { duration: 0.7, ease: [0.6, 0.01, -0.05, 0.9] };
+const transition = { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.9] };
 
 const Container = styled(motion.div)`
     background-image: url('/assets/home-background.svg');
@@ -17,22 +17,21 @@ const Container = styled(motion.div)`
     max-width: 100vw;
     width: 100vw;
     overflow-x: hidden;
-    background-color: ${props => props.themes === 'light' ? '#FFF' : 'rgb(30, 34, 56)'};
+    background-color: ${props => props.theme.backgroundColor};
 
     @media(max-width: 960px) {
       background-image: none;
     }
 `;
 
-export default function Home() {
-    const { theme } = useThemeContext();
+const Home = ({ theme }) => {
     return (
-        <Container themes={theme}
+        <Container
             initial={{
-                backgroundColor: theme === 'light' ? '#FFF' : 'rgb(30, 34, 56)'
+                backgroundColor: theme.backgroundColor
             }}
             animate={{
-                backgroundColor: theme === 'light' ? '#FFF' : 'rgb(30, 34, 56)',
+                backgroundColor: theme.backgroundColor,
                 transition
             }}
             >
@@ -43,3 +42,5 @@ export default function Home() {
         </Container>
     )
 }
+
+export default withTheme(Home);
