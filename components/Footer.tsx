@@ -113,7 +113,7 @@ const FooterSection = () => {
         <FooterContainer lightMode={theme === 'light'}>
             <SocialsContainer>
                 <Logo onClick={scrollToTop}>
-                    <Image src='/assets/sid_logo_text.svg' alt="logo" height={100} width={100} />
+                    <Image priority src='/assets/sid_logo_text.svg' alt="logo" height={100} width={100} />
                 </Logo>
                 <SocialContainer>
                     <Icon onClick={() => open(socials.facebook)}><FaFacebook size="24" /></Icon>
