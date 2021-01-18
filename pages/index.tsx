@@ -17,6 +17,7 @@ const Container = styled(motion.div)`
     max-width: 100vw;
     width: 100vw;
     overflow-x: hidden;
+    background-color: ${props => props.themes === 'light' ? '#FFF' : 'rgb(30, 34, 56)'};
 
     @media(max-width: 960px) {
       background-image: none;
@@ -26,11 +27,15 @@ const Container = styled(motion.div)`
 export default function Home() {
     const { theme } = useThemeContext();
     return (
-        <Container
+        <Container themes={theme}
+            initial={{
+                backgroundColor: theme === 'light' ? '#FFF' : 'rgb(30, 34, 56)'
+            }}
             animate={{
                 backgroundColor: theme === 'light' ? '#FFF' : 'rgb(30, 34, 56)',
                 transition
-            }}>
+            }}
+            >
             <Header />
             <Banner />
             <Profile />
