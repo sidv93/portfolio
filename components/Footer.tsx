@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { FaFacebook, FaTwitter, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 import { useThemeContext } from '@context/theme';
 import Image from 'next/image';
 
@@ -12,7 +11,7 @@ const socials = {
     instagram: 'https://www.instagram.com/sid.venkatesh/'
 };
 
-const FooterContainer = styled(motion.footer)`
+const FooterContainer = styled.footer`
     padding: 25px 20%;
     min-height: 15vh;
     position: relative;
@@ -111,7 +110,7 @@ const FooterSection = () => {
         window.open(url, '_blank');
     }
     return (
-        <FooterContainer lightMode={theme === 'light'} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+        <FooterContainer lightMode={theme === 'light'}>
             <SocialsContainer>
                 <Logo onClick={scrollToTop}>
                     <Image src='/assets/sid_logo_text.svg' alt="logo" height={100} width={100} />

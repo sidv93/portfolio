@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
-const Container = styled(motion.div)`
+const Container = styled.div`
     min-width: 250px;
     box-shadow: 0 32px 64px rgba(16,22,65,0.24);
     display: flex;
@@ -78,11 +76,8 @@ const Skill = styled.p`
 `;
 
 const Card = ({ skill }) => {
-    const [ref, inView] = useInView({
-        threshold: 0.3
-    });
     return (
-        <Container transform={skill.transform} ref={ref} initial={{ opacity: 0 }} animate={{ opacity: inView ? 1 : 0 }} transition={{ duration: 1 }}>
+        <Container transform={skill.transform}>
             <Title>{skill.title}</Title>
             <ListContainer>
                 {

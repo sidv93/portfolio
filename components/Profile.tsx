@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import SkillCards from '@components/SkillCards';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
-const Container = styled(motion.section)`
+const Container = styled.section`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -81,20 +79,14 @@ const Hi = styled.a`
 `;
 
 const Profile = () => {
-    const [ref, inView] = useInView({
-        threshold: 0.1
-    });
-    const [textRef, textInView] = useInView({
-        threshold: 0.3
-    });
     const downloadResume = () => {
         window.open('/SiddharthVenkatesh.pdf', '_blank');
     }
     return (
-        <Container ref={ref} initial={{ opacity: 0 }} animate={{ opacity: inView ? 1 : 0 }} transition={{ duration: 1 }}>
+        <Container>
             <ProfileContainer>
                 <Heading>Profile</Heading>
-                <motion.div ref={textRef} initial={{ opacity: 0 }} animate={{ opacity: textInView ? 1 : 0 }} transition={{ duration: 1 }}>
+                <div>
                     <Text>
                         I love everything JavaScript, and most of my work revolves around it.
                     </Text>
@@ -116,7 +108,7 @@ const Profile = () => {
                     <Text style={{ marginTop: '50px' }}>
                         Here is a small selection of relevant stuff I do
                     </Text>
-                </motion.div>
+                </div>
                 <SkillCards />
             </ProfileContainer>
             <ResumeText>
