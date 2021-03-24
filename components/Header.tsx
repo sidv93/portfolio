@@ -4,6 +4,7 @@ import { FaMoon } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useThemeContext } from '../context/theme';
 import Image from 'next/image';
+import { useRouter } from 'next/router'
 
 const HeaderContainer = styled(motion.header)`
     background-color: transparent;
@@ -39,9 +40,13 @@ const ModeIcon = styled(motion.div)`
 
 const Header = () => {
     const { theme, toggleTheme } = useThemeContext();
+    const router = useRouter()
+    const toHome = () => {
+        router.push('/');
+    }
     return (
         <HeaderContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-            <Logos>
+            <Logos onClick={toHome}>
                 <Image src="/assets/sid_logo.svg" alt="Logo" height={50} width={50} priority />
             </Logos>
             <NavlinksContainer onClick={() => toggleTheme()}>

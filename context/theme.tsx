@@ -10,6 +10,7 @@ const lightTheme = {
 }
 const darkTheme = {
     titleColor: '#FFF',
+    thoughtTitle: '#ffa7c4',
     textColor: '#626F7F',
     backgroundColor: 'rgb(30, 34, 56)'
 }
