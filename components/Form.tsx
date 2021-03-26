@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { useMutation } from 'urql';
 
 const Container = styled.div`
     padding: 25px 30%;
@@ -77,7 +78,22 @@ const Container = styled.div`
     }
 `;
 
+const THOUGHTS_MUTATION = `
+    mutation($title: String!, $text: String!) {
+        insert_thoughts(objects: {text: $text, title: $title}) {
+            returning {
+                id
+                text
+                title
+                created_at
+            }
+        }
+    }
+`;
+
 const Form = () => {
+    const [addThoughtResult, addThought] = useMutation(THOUGHTS_MUTATION);
+
     const [thought, setThought] = useState({
         title: '',
         text: ''
@@ -94,8 +110,12 @@ const Form = () => {
             text: ''
         });
     };
-    const submit = (e) => {
+    const submit = async (e) => {
         e.preventDefault();
+        await addThought({
+            title: thought.title,
+            text: thought.text
+        });
         reset();
     };
 

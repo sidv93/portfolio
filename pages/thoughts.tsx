@@ -1,9 +1,11 @@
 import Header from "@components/Header";
 import styled, { withTheme } from 'styled-components';
 import { motion } from 'framer-motion';
+import { withUrqlClient, } from 'next-urql';
 import Title from "@components/Title";
 import Thought from "@components/Thought";
 import Form from "@components/Form";
+import { useQuery, } from "urql";
 
 const transition = { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.9] };
 
@@ -25,7 +27,20 @@ const ThoughtsContainer = styled.div`
     }
 `;
 
+const THOUGHTS_QUERY = `
+    query {
+        thoughts(order_by: {created_at: desc}) {
+            id
+            text
+            title
+            created_at
+        }
+    }
+`;
+
 const Thoughts = ({ theme }) => {
+    const [result] = useQuery({ query: THOUGHTS_QUERY });
+    const { data, fetching, error } = result;
     return (
         <Container
             initial={{
@@ -40,17 +55,29 @@ const Thoughts = ({ theme }) => {
             <Title />
             <Form />
             <ThoughtsContainer>
-                <Thought text="Lorem ipsum is simply dummy text of printing and typesetting industry" date="24th March 2020" title="First" />
-                <Thought text="testing thoughts" date="24th March 2020" title="First" />
-                <Thought text="testing thoughts" date="24th March 2020" title="First" />
-                <Thought text="testing thoughts" date="24th March 2020" title="First" />
-                <Thought text="testing thoughts" date="24th March 2020" title="First" />
-                <Thought text="testing thoughts" date="24th March 2020" title="First" />
-                <Thought text="testing thoughts" date="24th March 2020" title="First" />
-                <Thought text="testing thoughts" date="24th March 2020" title="First" />
+                {
+                    data && data.thoughts.map((thought) => (
+                        <Thought
+                            key={thought.id}
+                            text={thought.text}
+                            title={thought.title}
+                            date={thought.created_at} />
+                    ))
+                }
             </ThoughtsContainer>
         </Container>
     );
 };
 
-export default withTheme(Thoughts);
+export default withUrqlClient((_ssrExchange, ctx) => ({
+    url: 'https://portfolio-thoughts.hasura.app/v1/graphql',
+    fetchOptions: () => {
+        const token = 'P4OyKYxyZYpGEVHRIp5xZnuv7NHb990Xx7qnqAmJawyEaJlB3QWn2Smy8vJhF3We';
+        return {
+            headers: {
+                'x-hasura-admin-secret': token,
+                'content-type': 'application/json'
+            }
+        };
+    }
+}))(withTheme(Thoughts));

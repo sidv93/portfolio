@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { format } from 'date-fns';
 
 interface ThoughtProps {
     title: string;
@@ -16,6 +17,10 @@ const Title = styled.h1`
     font-size: 4rem;
     color: ${props => props.theme.thoughtTitle};
     margin: 0;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
 `;
 const Date = styled.p`
     font-family: 'Fira sans', sans-serif;
@@ -28,16 +33,21 @@ const Text = styled.p`
     font-size: 2rem;
     color: ${props => props.theme.textColor};
     margin: 0;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
 `;
 
 const Thought = ({ title, date, text }: ThoughtProps) => {
+    const d = new window.Date(date);
     return (
         <Container>
             <Title>
                 {title}
             </Title>
             <Date>
-                {date}
+                {format(d, 'do LLLL yyyy')}
             </Date>
             <Text>
                 {text}
