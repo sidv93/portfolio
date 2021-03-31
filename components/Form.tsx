@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { useMutation } from 'urql';
+import Loader from './Loader';
 
 const Container = styled.div`
     padding: 25px 30%;
@@ -47,11 +48,15 @@ const Container = styled.div`
                 font-size: 1.6rem;
                 padding: 5px 16px;
                 background-color: inherit;
+                min-width: 68px;
                 box-shadow: 0 0 3pt 0 ${props => props.theme.thoughtTitle};
                 border: none;
                 color: ${props => props.theme.thoughtTitle};
                 border-radius: 4px;
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 &:focus {
                     outline: none;
@@ -93,6 +98,7 @@ const THOUGHTS_MUTATION = `
 
 const Form = () => {
     const [addThoughtResult, addThought] = useMutation(THOUGHTS_MUTATION);
+    const [loading, toggleLoading] = useState(false);
 
     const [thought, setThought] = useState({
         title: '',
@@ -111,12 +117,14 @@ const Form = () => {
         });
     };
     const submit = async (e) => {
+        toggleLoading(true);
         e.preventDefault();
         await addThought({
             title: thought.title,
             text: thought.text
         });
         reset();
+        toggleLoading(false);
     };
 
     return (
@@ -126,7 +134,15 @@ const Form = () => {
                 <textarea name='text' required placeholder='Thoughts?' value={thought.text} onChange={onChange} />
                 <div>
                     <button type='button' className='reset' onClick={reset}>Reset</button>
-                    <button type='submit' className='save'>Save</button>
+                    <button type='submit' className='save'>
+                        {
+                            loading && <Loader height={18} width={18} />
+                        }
+                        {
+                            !loading && 'Save'
+                        }
+                        
+                    </button>
                 </div>
             </form>
         </Container>
