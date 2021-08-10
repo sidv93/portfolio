@@ -43,31 +43,31 @@ const ProfileContainer = styled.div`
     }
 `;
 const Heading = styled.h1`
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans Medium;
     font-size: 4rem;
     color: ${props => props.theme.titleColor};
 `;
 const Text = styled.p`
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans;
     color: ${props => props.theme.textColor};
     font-size: 2.4rem;
     margin: 10px 0;
 `;
 const ResumeText = styled.p`
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans Medium;
     font-size: 2.4rem;
     color: #626F7F;
     padding: 0 10px;
 `;
 const ChatText = styled.p`
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans;
     color: #626F7F;
     font-size: 2.2rem;
     margin-top: 50px;
 `;
 const Hi = styled.a`
     font-size: 8rem;
-    font-family: 'Sacramento', cursive;
+    font-family: Sacramento;
     color: black;
     text-decoration: none;
     cursor: pointer;

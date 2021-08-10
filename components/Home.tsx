@@ -25,17 +25,17 @@ const Picture = styled(motion.div)`
         border-radius: 50%;
     }
 `;
-const Title = styled(motion.h3)`
-    font-family: 'Fira sans', sans-serif;
+const Title = styled(motion.h5)`
+    font-family: Fira-Sans Medium;
     font-size: 4.2rem;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
     margin: 30px 0;
     color: ${props => props.theme.titleColor};
 `;
 const Text = styled(motion.p)`
     font-size: 2.6rem;
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-sans;
     text-align: center;
     color: ${props => props.theme.textColor};
     margin: 5px 0;

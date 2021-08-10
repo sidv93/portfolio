@@ -20,8 +20,7 @@ const Container = styled.div`
 `;
 const Title = styled.h2`
     font-size: 2.2rem;
-    font-weight: 600;
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans Medium;
     margin: 0;
     color: ${props => props.theme.titleColor};
 `;
@@ -68,7 +67,7 @@ const ListElement = styled.div`
     }
 `;
 const Skill = styled.p`
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans;
     color: #626F7F;
     font-size: 1.8rem;
     padding: 5px 0;

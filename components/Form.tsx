@@ -19,7 +19,7 @@ const Container = styled.div`
         input {
             border: none;
             outline: none;
-            font-family: 'Fira sans', sans-serif;
+            font-family: Fira-Sans;
             font-size: 2.4rem;
             color: ${props => props.theme.textColor};
             background-color: inherit;
@@ -30,7 +30,7 @@ const Container = styled.div`
         textarea {
             border: none;
             outline: none;
-            font-family: 'Fira sans', sans-serif;
+            font-family: Fira-Sans;
             font-size: 2rem;
             color: ${props => props.theme.textColor};
             background-color: inherit;

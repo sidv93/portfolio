@@ -22,7 +22,7 @@ const ImgContainer = styled.div`
 `;
 
 const Text = styled.p`
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans;
     color: ${props => props.theme.textColor};
     font-size: 3.2rem;
     margin: 10px 0;

@@ -13,7 +13,7 @@ const Container = styled.div`
     gap: 8px;
 `;
 const Title = styled.h1`
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans;
     font-size: 4rem;
     color: ${props => props.theme.thoughtTitle};
     margin: 0;
@@ -23,13 +23,13 @@ const Title = styled.h1`
     }
 `;
 const Date = styled.p`
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans;
     font-size: 1.6rem;
     color: ${props => props.theme.textColor};
     margin: 0;
 `;
 const Text = styled.p`
-    font-family: 'Fira sans', sans-serif;
+    font-family: Fira-Sans;
     font-size: 2rem;
     color: ${props => props.theme.textColor};
     margin: 0;
