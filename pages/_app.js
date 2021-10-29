@@ -7,28 +7,24 @@ function MyApp({ Component, pageProps }) {
     <Head>
       <title>Siddharth Venkatesh</title>
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="alternate icon" type="image/svg+xml" href="/assets/sid_logo.svg" />
+      <link rel="alternate icon" href="/assets/icons/favicon.ico" />
       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       <meta charSet="utf-8" />
-      <meta name="description" content={"Siddharth Venkatesh | Fullstack developer"} />
+      <meta name="description" content="Siddharth Venkatesh | Fullstack developer" />
 
-      {/* Google SEO tags */}
-      <meta itemProp="name" content="Siddharth Venkatesh" />
-      <meta itemProp="description" content="Fullstack developer" />
-      <meta itemProp="image" content="/assets/sid_logo.svg" />
-
-      {/* Facebook SEO tags */}
-      <meta property="og:image" content={'/assets/sid_logo.svg'} />
-      <meta property="og:title" content={"Siddharth Venkatesh"} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={"https://sidv.info"} />
-      <meta property="og:site_name" content={"Siddharth Venkatesh"} key="ogsitename" />
-      <meta property="og:description" content={"Siddharth Venkatesh | Fullstack developer"} />
+      {/* Opengraph tags */}
+      <meta property="og:title" content="Siddharth Venkatesh" />
+      <meta property="og:type" content="profile" />
+      <meta property="og:url" content="https://sidv.info" />
+      <meta property="og:description" content="Siddharth Venkatesh | Fullstack developer" />
+      <meta property="og:image" content="/assets/sid_logo.svg" />
+      <meta property="og:site_name" content="Siddharth Venkatesh" key="ogsitename" />
 
       {/* Twitter SEO tags */}
-      <meta name="twitter:card" content="/assets/profile-picture.jpg" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="Siddharth Venkatesh" />
-      <meta name="twitter:description" content="Fullstack developer" />
+      <meta name="twitter:description" content="Siddharth Venkatesh | Fullstack developer" />
+      <meta name="twitter:site" content="@zidvenkatesh" />
       <meta name="twitter:image" content="/assets/sid_logo.svg" />
 
       {/* PWA tags */}
