@@ -79,9 +79,6 @@ const Hi = styled.a`
 `;
 
 const Profile = () => {
-    const downloadResume = () => {
-        window.open('/SiddharthVenkatesh.pdf', '_blank');
-    }
     return (
         <Container>
             <ProfileContainer>
@@ -114,7 +111,7 @@ const Profile = () => {
             <ResumeText>
                 There is a bit more stuff about me in my
                 &nbsp;
-                <span onClick={downloadResume} style={{ fontSize: '4rem', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline', color: '#626F7F' }}>Resume</span>
+                <a href="/SiddharthVenkatesh.pdf" target="_blank" style={{ fontSize: '4rem', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline', color: '#626F7F' }}>Resume</a>
             </ResumeText>
             <ChatText >
                 If you have anything interesting to say idea or just want to chat, I'm always down!

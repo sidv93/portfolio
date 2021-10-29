@@ -6,6 +6,7 @@ const ThemeContext = createContext({ theme: 'light', toggleTheme: () => { } });
 const lightTheme = {
     titleColor: '#232E3B',
     textColor: '#626F7F',
+    thoughtTitle: '#ffa7c4',
     backgroundColor: '#FFF'
 }
 const darkTheme = {

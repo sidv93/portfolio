@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const socials = {
     facebook: 'https://www.facebook.com/siddharth.venkatesh.5',
-    twitter: 'https://twitter.com/sid_v12',
+    twitter: 'https://twitter.com/zidvenkatesh',
     github: 'https://github.com/sidv93',
     linkedIn: 'https://www.linkedin.com/in/siddharth-venkatesh-b3a886ba/',
     instagram: 'https://www.instagram.com/sid.venkatesh/'
@@ -81,7 +81,7 @@ const SocialContainer = styled.div`
     }
 `;
 
-const Icon = styled.div`
+const Icon = styled.a`
     color: #4346DE;
     cursor: pointer;
     opacity: 0.7;
@@ -106,9 +106,6 @@ const FooterSection = () => {
             behavior: "smooth"
         });
     }
-    const open = (url) => {
-        window.open(url, '_blank');
-    }
     return (
         <FooterContainer lightMode={theme === 'light'}>
             <SocialsContainer>
@@ -116,11 +113,11 @@ const FooterSection = () => {
                     <Image priority src='/assets/sid_logo_text.svg' alt="logo" height={100} width={100} />
                 </Logo>
                 <SocialContainer>
-                    <Icon onClick={() => open(socials.facebook)}><FaFacebook size="24" /></Icon>
-                    <Icon onClick={() => open(socials.twitter)}><FaTwitter size="24" /></Icon>
-                    <Icon onClick={() => open(socials.github)}><FaGithub size="24" /></Icon>
-                    <Icon onClick={() => open(socials.linkedIn)}><FaLinkedin size="24" /></Icon>
-                    <Icon onClick={() => open(socials.instagram)}><FaInstagram size="24" /></Icon>
+                    <Icon href={socials.facebook} target="_blank"><FaFacebook size="24" /></Icon>
+                    <Icon href={socials.twitter} target="_blank"><FaTwitter size="24" /></Icon>
+                    <Icon href={socials.github} target="_blank"><FaGithub size="24" /></Icon>
+                    <Icon href={socials.linkedIn} target="_blank"><FaLinkedin size="24" /></Icon>
+                    <Icon href={socials.instagram} target="_blank"><FaInstagram size="24" /></Icon>
                 </SocialContainer>
             </SocialsContainer>
         </FooterContainer>
