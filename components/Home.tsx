@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FaHeart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Head from 'next/head';
+import ProfilePicture from '../public/assets/profile-picture-small.webp';
 
 const Container = styled.div`
     display: flex;
@@ -75,9 +75,6 @@ const item = {
 const Banner = () => {
     return (
         <Container>
-            <Head>
-                <link rel="preload" as="image" href="/assets/profile-picture-small.webp" />
-            </Head>
             <Picture initial={{ scale: 0 }}
                 animate={{ rotate: 360, scale: 1 }}
                 transition={{
@@ -86,7 +83,7 @@ const Banner = () => {
                     damping: 20
                 }}>
                 <Image priority
-                    src="/assets/profile-picture-small.webp" width={250} height={250} alt="Profile picture" />
+                    src={ProfilePicture} width={250} height={250} alt="Profile picture" />
             </Picture>
             <motion.div variants={containerVariant} initial="hidden" animate="visible">
                 <Title variants={item} >Siddharth Venkatesh</Title>
