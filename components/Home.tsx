@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { FaHeart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Head from 'next/head';
 
 const Container = styled.div`
     display: flex;
@@ -74,6 +75,9 @@ const item = {
 const Banner = () => {
     return (
         <Container>
+            <Head>
+                <link rel="preload" as="image" href="/assets/profile-picture-small.webp" />
+            </Head>
             <Picture initial={{ scale: 0 }}
                 animate={{ rotate: 360, scale: 1 }}
                 transition={{

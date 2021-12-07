@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
       <title>Siddharth Venkatesh</title>
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="alternate icon" href="/assets/icons/favicon.ico" />
+      <link rel="preload" as="image" href="/assets/profile-picture-small.webp" />
       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       <meta charSet="utf-8" />
       <meta name="description" content="Siddharth Venkatesh | Fullstack developer" />
