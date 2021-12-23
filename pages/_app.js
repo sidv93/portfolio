@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
       <meta name="twitter:image" content="/assets/sid_logos.png" />
 
       {/* PWA tags */}
-      <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png" />
+      {/* <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png" />
       <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png" />
       <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png" />
       <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png" />
@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }) {
       <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
       <link rel="manifest" href="/manifest.json" />
       <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png" />
+      <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png" /> */}
       <meta name="theme-color" content="#ffffff" />
     </Head>
     <Component {...pageProps} />
