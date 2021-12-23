@@ -13,19 +13,19 @@ function MyApp({ Component, pageProps }) {
       <meta name="description" content="Siddharth Venkatesh | Fullstack developer" />
 
       {/* Opengraph tags */}
-      <meta property="og:title" content="Siddharth Venkatesh" />
+      {/* <meta property="og:title" content="Siddharth Venkatesh" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://sidv.info" />
       <meta property="og:description" content="Siddharth Venkatesh | Fullstack developer" />
       <meta property="og:image" content="/assets/sid_logos.png" />
-      <meta property="og:site_name" content="Siddharth Venkatesh" key="ogsitename" />
+      <meta property="og:site_name" content="Siddharth Venkatesh" key="ogsitename" /> */}
 
       {/* Twitter SEO tags */}
-      {/* <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="Siddharth Venkatesh" />
       <meta name="twitter:description" content="Siddharth Venkatesh | Fullstack developer" />
       <meta name="twitter:site" content="@zidvenkatesh" />
-      <meta name="twitter:image" content="/assets/sid_logos.png" /> */}
+      <meta name="twitter:image" content="/assets/sid_logos.png" />
 
       {/* PWA tags */}
       <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png" />
