@@ -91,7 +91,7 @@ const Banner = () => {
                     Fullstack developer at Asteria Aerospace.
                 </Text>
                 <Text variants={item} >
-                    Chennai born, Bangalore made, INFP
+                    Chennai born, Bangalore made
                 </Text>
                 <Text variants={item} >
                     <FaHeart color="red" size="24" />

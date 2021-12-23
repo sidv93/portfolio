@@ -4,11 +4,12 @@ import Header from '@components/Header';
 import Banner from '@components/Home';
 import Profile from '@components/Profile';
 import Footer from '@components/Footer';
+import { useThemeContext } from '@context/theme';
 
 const transition = { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.9] };
 
 const Container = styled(motion.div)`
-    background-image: url('/assets/home-background.svg');
+    background-image: ${props => props.systemTheme === 'dark' ? 'none' : "url('/assets/home-background.svg')"};
     background-repeat: no-repeat;
     background-position: 50% 0%;
     background-size: auto;
@@ -24,6 +25,7 @@ const Container = styled(motion.div)`
 `;
 
 const Home = ({ theme }) => {
+    const { theme: systemTheme, toggleTheme } = useThemeContext();
     return (
         <Container
             initial={{
@@ -33,6 +35,7 @@ const Home = ({ theme }) => {
                 backgroundColor: theme.backgroundColor,
                 transition
             }}
+            systemTheme={systemTheme}
             >
             <Header />
             <Banner />

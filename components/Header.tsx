@@ -4,14 +4,15 @@ import { FaMoon } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useThemeContext } from '../context/theme';
 import Image from 'next/image';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import Link from 'next/link'
 
 const HeaderContainer = styled(motion.header)`
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 20%;
+    padding: 25px 10%;
 
     @media(max-width: 960px) {
         margin: auto;
@@ -37,6 +38,7 @@ const BlogLink = styled(motion.a)`
     border-color: ${props => props.theme.titleColor};
     border-style: solid;
     border-width: 0;
+    cursor: pointer;
 `;
 const ModeIcon = styled(motion.div)`
     cursor: pointer;
@@ -59,14 +61,16 @@ const Header = () => {
                 <Image src="/assets/sid_logo.svg" alt="Logo" height={50} width={50} priority />
             </Logos>
             <NavlinksContainer>
-                <BlogLink href="https://dev.to/sidv93" target="_blank"
-                    whileHover={{
-                        borderBottomWidth: '3px'
-                    }}
-                    transition={{ duration: 0.1 }}
-                >
-                    Blog
-                </BlogLink>
+                <Link href="/blog">
+                    <BlogLink
+                        whileHover={{
+                            borderBottomWidth: '3px'
+                        }}
+                        transition={{ duration: 0.1 }}
+                    >
+                        Blog
+                    </BlogLink>
+                </Link>
                 <div onClick={() => toggleTheme()}>
                     {theme === 'dark' && <ModeIcon initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}><FaSun size="32" color="#FFF" /></ModeIcon>}
                     {theme === 'light' && <ModeIcon initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}><FaMoon size="32" /></ModeIcon>}

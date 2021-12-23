@@ -12,7 +12,7 @@ const socials = {
 };
 
 const FooterContainer = styled.footer`
-    padding: 25px 20%;
+    padding: 25px 10%;
     min-height: 15vh;
     position: relative;
 
@@ -24,17 +24,17 @@ const FooterContainer = styled.footer`
     &:before {
         content: '';
         position: absolute;
-        width: 60%;
+        width: 80%;
         height: 1px;
         background-color: #626F7F;
-        margin: 0 20%;
+        margin: 0 10%;
         left: 0;
         top: 0;
 
-        @media(max-width: 960px) {
+        /* @media(max-width: 960px) {
             width: 80%;
             margin: 0 10%;
-        }
+        } */
     }
 
     &:after {

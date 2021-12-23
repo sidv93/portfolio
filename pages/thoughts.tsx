@@ -1,4 +1,5 @@
 import Header from "@components/Header";
+import Footer from "@components/Footer";
 import styled, { withTheme } from 'styled-components';
 import { motion } from 'framer-motion';
 import { withUrqlClient, } from 'next-urql';
@@ -52,7 +53,7 @@ const Thoughts = ({ theme }) => {
             }}
         >
             <Header />
-            <Title />
+            <Title title="Thoughts" />
             <Form />
             <ThoughtsContainer>
                 {
@@ -65,6 +66,7 @@ const Thoughts = ({ theme }) => {
                     ))
                 }
             </ThoughtsContainer>
+            <Footer />
         </Container>
     );
 };
