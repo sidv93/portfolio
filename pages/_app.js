@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return <ThemeContextProvider>
     <Head>
       <title>Siddharth Venkatesh</title>
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" href="/favicon.ico" />
       <link rel="preload" as="image" href="/assets/profile-picture-small.webp" />
       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       <meta charSet="utf-8" />
@@ -21,11 +21,11 @@ function MyApp({ Component, pageProps }) {
       <meta property="og:site_name" content="Siddharth Venkatesh" key="ogsitename" />
 
       {/* Twitter SEO tags */}
-      <meta name="twitter:card" content="summary" />
+      {/* <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="Siddharth Venkatesh" />
       <meta name="twitter:description" content="Siddharth Venkatesh | Fullstack developer" />
       <meta name="twitter:site" content="@zidvenkatesh" />
-      <meta name="twitter:image" content="/assets/sid_logos.png" />
+      <meta name="twitter:image" content="/assets/sid_logos.png" /> */}
 
       {/* PWA tags */}
       <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png" />
