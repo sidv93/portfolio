@@ -13,12 +13,12 @@ function MyApp({ Component, pageProps }) {
       <meta name="description" content="Siddharth Venkatesh | Fullstack developer" />
 
       {/* Opengraph tags */}
-      {/* <meta property="og:title" content="Siddharth Venkatesh" />
+      <meta property="og:title" content="Siddharth Venkatesh" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://sidv.info" />
       <meta property="og:description" content="Siddharth Venkatesh | Fullstack developer" />
       <meta property="og:image" content="/assets/sid_logos.png" />
-      <meta property="og:site_name" content="Siddharth Venkatesh" key="ogsitename" /> */}
+      <meta property="og:site_name" content="Siddharth Venkatesh" key="ogsitename" />
 
       {/* Twitter SEO tags */}
       <meta name="twitter:card" content="summary" />
