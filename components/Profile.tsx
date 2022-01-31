@@ -82,15 +82,26 @@ const Profile = () => {
     return (
         <Container>
             <ProfileContainer>
-                <Heading>Profile</Heading>
+                <Heading>About</Heading>
                 <div>
                     <Text>
-                        I love everything JavaScript, and most of my work revolves around it.
+                        Hey! I'm Sid. I'm a Fullstack developer at Asteria Aerospace.
                     </Text>
                     <Text>
-                        Been working with Angular for the majority of my work life, and I've found a new liking for React over the last year or two.
+                        I'm JavaScript enthusiast, and most of my work revolves around it.
                     </Text>
                     <Text>
+                        I've spent the last few years building UIs in React and Angular, and backend services in Node, Express, and GraphQL. 
+                    </Text>
+                    <Text>
+                        I've also got my hands into DevOps side of things with tools like Azure and Docker.
+                    </Text>
+                    <Text style={{ marginTop: '4rem'}}>
+                        I sometimes write about things I find interesting. You can check it out&nbsp;
+                        <a href="/blog" target="_blank" style={{ fontSize: '3rem', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '0.5rem', color: '#626F7F' }}>here</a>
+                        &nbsp; and here is my <a href="https://github.com/sidv93" target="_blank" style={{ fontSize: '3rem', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '0.5rem', color: '#626F7F' }}>Github</a>
+                    </Text>
+                    {/* <Text>
                         I have taken up React Native in the past few months and loving it so far.
                     </Text>
                     <Text>
@@ -101,17 +112,17 @@ const Profile = () => {
                     </Text>
                     <Text>
                         My latest fascination is micro-interactions and animations, and I've taken it as a hobby to come up with slick transitions.
-                    </Text>
-                    <Text style={{ marginTop: '50px' }}>
+                    </Text> */}
+                    {/* <Text style={{ marginTop: '50px' }}>
                         Here is a small selection of relevant stuff I do
-                    </Text>
+                    </Text> */}
                 </div>
-                <SkillCards />
+                {/* <SkillCards /> */}
             </ProfileContainer>
             <ResumeText>
                 There is a bit more stuff about me in my
                 &nbsp;
-                <a href="/SiddharthVenkatesh.pdf" target="_blank" style={{ fontSize: '4rem', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline', color: '#626F7F' }}>Resume</a>
+                <a href="/SiddharthVenkatesh.pdf" target="_blank" style={{ fontSize: '4rem', fontWeight: 700, textDecoration: 'underline', color: '#626F7F' }}>Resume</a>
             </ResumeText>
             <ChatText >
                 If you have anything interesting to say idea or just want to chat, I'm always down!

@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { FaHeart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import ProfilePicture from '../public/assets/profile-picture-small.webp';
+import ProfilePicture from '../public/assets/pp2.jpeg';
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     padding: 50px 15%;
+    min-height: 80vh;
 
     @media(max-width: 960px) {
         max-width: 960px;
@@ -40,6 +41,11 @@ const Text = styled(motion.p)`
     text-align: center;
     color: ${props => props.theme.textColor};
     margin: 5px 0;
+    
+    a {
+        text-decoration: underline;
+        text-underline-offset: 0.6rem;
+    }
 `;
 
 const containerVariant = {
@@ -88,7 +94,7 @@ const Banner = () => {
             <motion.div variants={containerVariant} initial="hidden" animate="visible">
                 <Title variants={item} >Siddharth Venkatesh</Title>
                 <Text variants={item} >
-                    Fullstack developer at Asteria Aerospace.
+                    Fullstack developer at <a href="https://asteria.co.in/" target="_blank">Asteria Aerospace</a>
                 </Text>
                 <Text variants={item} >
                     Chennai born, Bangalore made

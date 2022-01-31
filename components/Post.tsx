@@ -11,6 +11,8 @@ const Container = styled.div`
     }
 `;
 const Img = styled.img`
+    border-radius: 20px;
+
     @media(max-width: 960px) {
       display: none;
     }
@@ -18,7 +20,7 @@ const Img = styled.img`
 const TextContent = styled.div`
     display: flex;
     flex-direction: column;
-    padding-left: 100px;
+    padding-left: 60px;
     align-items: flex-start;
     justify-content: center; 
     gap: 10px;
