@@ -1,5 +1,6 @@
 import styled, { withTheme } from 'styled-components';
 import { motion } from 'framer-motion';
+import { AiFillEye } from 'react-icons/ai';
 
 import Header from "@components/Header";
 import Footer from "@components/Footer";
@@ -22,21 +23,50 @@ const TitleContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding-right: 10%;
+
+    @media(max-width: 960px) {
+       /* flex-direction: column;
+       justify-content: flex-start;
+       align-items: flex-start; */
+    }
 `;
 
 const Views = styled.p`
     display: flex;
     align-items: center;
+    gap: 5px;
+
+    @media(max-width: 960px) {
+        padding-left: 20px;
+    }
 
     .text {
         font-size: 2.6rem;
         font-family: Fira-sans;
         color: ${props => props.theme.textColor};
+
+        @media(max-width: 960px) {
+            font-size: 1.8rem;
+            display: none;
+        }
     }
     .count {
         font-size: 3.2rem;
         font-family: Fira-Sans Medium;
         color: ${props => props.systemTheme === 'dark' ? props.theme.thoughtTitle : props.theme.titleColor};
+
+        @media(max-width: 960px) {
+            font-size: 1.8rem;
+            font-family: Fira-Sans;
+        }
+    }
+
+    .icon {
+        display: none;
+        color: ${props => props.theme.textColor};
+        @media(max-width: 960px) {
+            display: inline;
+        }
     }
 `;
 
@@ -69,7 +99,8 @@ const Blog = ({ posts, views, theme }) => {
             <TitleContainer>
                 <Title title="Posts" />
                 <Views systemTheme={systemTheme}>
-                    <span className='text'>Total views:&nbsp;</span>
+                    <span className='text'>Total reads:&nbsp;</span>
+                    <span className='icon'><AiFillEye size="28" /></span>
                     <span className='count'>{views}</span>
                 </Views>
             </TitleContainer>

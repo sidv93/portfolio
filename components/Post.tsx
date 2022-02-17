@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { format } from 'date-fns';
+import { AiFillEye } from 'react-icons/ai';
+
 import { useThemeContext } from '@context/theme';
 
 const Container = styled.div`
@@ -24,6 +26,15 @@ const TextContent = styled.div`
     align-items: flex-start;
     justify-content: center; 
     gap: 10px;
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-family: Fira-Sans;
+        font-size: 1.8rem;
+        color: ${props => props.theme.textColor};
+    }
 
     @media(max-width: 960px) {
         padding-left: 0;
@@ -61,6 +72,7 @@ const Post = ({
         title,
         published_at,
         reading_time_minutes,
+        page_views_count,
     },
 }) => {
     const { theme } = useThemeContext();
@@ -71,6 +83,7 @@ const Post = ({
             <TextContent>
                 <Title systemTheme={theme} href={url} target="_blank">{title}</Title>
                 <Subtitle>{`${format(new Date(published_at), 'do LLLL yyyy')} · ${reading_time_minutes} mins read`}</Subtitle>
+                <span className='icon'><AiFillEye size="24" />{page_views_count}</span>
             </TextContent>
         </Container>
     );
