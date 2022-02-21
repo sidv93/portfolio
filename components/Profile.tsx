@@ -97,8 +97,8 @@ const Profile = () => {
                         I've also got my hands into DevOps side of things with tools like Azure and Docker.
                     </Text>
                     <Text style={{ marginTop: '4rem'}}>
-                        I sometimes write about things I find interesting. You can check it out&nbsp;
-                        <a href="/blog" target="_blank" style={{ fontSize: '3rem', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '0.5rem', color: '#626F7F' }}>here</a>
+                        I sometimes write about things I find interesting. You can check it out on my &nbsp;
+                        <a href="/blog" target="_blank" style={{ fontSize: '3rem', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '0.7rem', color: '#626F7F' }}>blog</a>
                         &nbsp; and here is my <a href="https://github.com/sidv93" target="_blank" style={{ fontSize: '3rem', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '0.5rem', color: '#626F7F' }}>Github</a>
                     </Text>
                     {/* <Text>
