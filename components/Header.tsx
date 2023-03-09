@@ -4,8 +4,9 @@ import { FaMoon } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useThemeContext } from '../context/theme';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import Link from 'next/link'
+import { useRouter, Router } from 'next/router';
+import Link from 'next/link';
+import NProgress from 'nprogress';
 
 const HeaderContainer = styled(motion.header)`
     background-color: transparent;
@@ -54,6 +55,15 @@ const Header = () => {
     const router = useRouter()
     const toHome = () => {
         router.push('/');
+    }
+    Router.onRouteChangeStart = () => {
+        console.log('in router change');
+        NProgress.start();
+    }
+    
+    Router.onRouteChangeComplete = () => {
+        console.log('in router change');
+        NProgress.done();
     }
     return (
         <HeaderContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>

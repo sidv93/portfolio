@@ -45,6 +45,7 @@ function MyApp({ Component, pageProps }) {
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png" /> */}
       <meta name="theme-color" content="#ffffff" />
+      <link rel="stylesheet" type="text/css" href="/styles/nprogress.css" />
     </Head>
     <Component {...pageProps} />
   </ThemeContextProvider>
